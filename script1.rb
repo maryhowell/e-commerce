@@ -38,6 +38,7 @@ spent = Purchase.where(user_id: carmelo.id).map { |p| (p.item.price.to_f)*(p.qua
 puts "Carmelo Towne spent $#{spent}."
 #--------------------
 
-
 #all_users
-# How many users have > 1 address?
+addresses = all_users.select{|u| u.addresses.count > 1}
+addresses_over_one = addresses.count
+puts "#{addresses_over_one} users have more than one address?"
